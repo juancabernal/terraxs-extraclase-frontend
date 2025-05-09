@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TerraXs - Inicio de Sesión</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="container">
+  <div class="logo">
+    <img src="img/logo.png" alt="Logo Agrapp">
+  </div>
+
+  <div id="loginForm">
+    <h2>Iniciar sesión</h2>
+    <form id="formLogin" onsubmit="return validarLogin(event)">
+      <input type="email" name="email" placeholder="Correo electrónico" required>
+      <input type="password" name="password" placeholder="Contraseña" required>
+      <div class="mensaje" id="loginMensaje"></div>
+      <button type="submit">Ingresar</button>
+    </form>
+    <div class="toggle-link">
+      ¿No tienes cuenta? <a onclick="toggleForms()">Regístrate ahora</a>
+    </div>
+  </div>
+
+  <div id="registerForm" class="hidden">
+    <h2>Crear cuenta</h2>
+    <form id="formRegister" onsubmit="return validarRegistro(event)">
+      <input type="text" name="nombres" placeholder="Nombres completos" required>
+      <input type="text" name="apellidos" placeholder="Apellidos completos" required>
+      <select name="tipoDocumento" required>
+        <option value="">Tipo de documento</option>
+        <option value="CC">Cédula de Ciudadanía</option>
+        <option value="CE">Cédula de Extranjería</option>
+        <option value="NIT">NIT</option>
+      </select>
+      <input type="text" name="numeroDocumento" placeholder="Número de documento" required>
+      <input type="email" name="correo" placeholder="Correo electrónico" required>
+      <input type="password" name="contrasena" placeholder="Contraseña (mínimo 8 caracteres)" required>
+      <input type="password" name="confirmarContrasena" placeholder="Repetir contraseña" required>
+      <input type="tel" name="telefono" placeholder="Teléfono" required>
+      <div class="mensaje" id="registroMensaje"></div>
+      <button type="submit">Crear cuenta</button>
+    </form>
+    <div class="toggle-link">
+      ¿Ya tienes cuenta? <a onclick="toggleForms()">Inicia sesión</a>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
